@@ -1,0 +1,249 @@
+:root {
+  --bg-light: #f0f4f8;
+  --bg-dark: #1a202c;
+  --text-light: #333;
+  --text-dark: #f0f4f8;
+  --primary: #2b6cb0;
+  --accent: #1a4c8c;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg-light) url('fundo.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: var(--text-light);
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+body.dark {
+  background: var(--bg-dark) url('fundo-escuro.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: var(--text-dark);
+}
+
+header, nav, footer {
+  text-align: center;
+  padding: 1.5em;
+  background-color: var(--primary);
+  color: white;
+  animation: fadeIn 1s ease;
+}
+
+nav a {
+  margin: 0 1em;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main {
+  max-width: 800px;
+  margin: 2em auto;
+  padding: 2em;
+  background-color: rgba(255,255,255,0.85);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  animation: slideUp 0.8s ease;
+}
+
+body.dark main {
+  background-color: rgba(26,32,44,0.85);
+}
+
+button.theme-toggle {
+  position: fixed;
+  top: 1em;
+  right: 1em;
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Adicione ao style.css */
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  background-color: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 1em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  max-width: 500px;
+  margin: auto;
+}
+
+form input, form textarea {
+  padding: 0.8em;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus, form textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 8px rgba(43, 108, 176, 0.3);
+  outline: none;
+}
+
+form button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.8em;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: var(--accent);
+}
+
+body.dark table.dataTable {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #f0f4f8;
+}
+
+body.dark table.dataTable th,
+body.dark table.dataTable td {
+  color: #f0f4f8;
+  border-color: #444;
+}
+
+body.dark .dataTables_wrapper .dataTables_filter input,
+body.dark .dataTables_wrapper .dataTables_length select {
+  background-color: #2d3748;
+  color: #f0f4f8;
+  border: 1px solid #555;
+}
+
+body.dark .dataTables_wrapper .dataTables_paginate .paginate_button {
+  background-color: #2d3748;
+  color: #f0f4f8 !important;
+  border: 1px solid #555;
+}
+
+/* Corrige fundo e texto da tabela no modo escuro */
+body.dark table.dataTable {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  color: #f0f4f8 !important;
+}
+
+/* Corrige cabeçalhos e células */
+body.dark table.dataTable th,
+body.dark table.dataTable td {
+  color: #f0f4f8 !important;
+  border-color: #444 !important;
+}
+
+/* Corrige campo de busca e seleção */
+body.dark .dataTables_wrapper .dataTables_filter input,
+body.dark .dataTables_wrapper .dataTables_length select {
+  background-color: #2d3748 !important;
+  color: #f0f4f8 !important;
+  border: 1px solid #555 !important;
+}
+
+/* Corrige paginação */
+body.dark .dataTables_wrapper .dataTables_paginate .paginate_button {
+  background-color: #2d3748 !important;
+  color: #f0f4f8 !important;
+  border: 1px solid #555 !important;
+}
+
+/* Corrige hover na paginação */
+body.dark .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  background-color: #3c4a5a !important;
+  color: #ffffff !important;
+}
+
+/* 🔧 Corrige fundo e texto da tabela no modo escuro */
+body.dark table.dataTable {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  color: #f0f4f8 !important;
+}
+
+/* 🔧 Corrige cabeçalhos e células */
+body.dark table.dataTable th,
+body.dark table.dataTable td {
+  background-color: transparent !important;
+  color: #f0f4f8 !important;
+  border-color: #444 !important;
+}
+
+/* 🔧 Corrige campo de busca e seleção */
+body.dark .dataTables_wrapper .dataTables_filter input,
+body.dark .dataTables_wrapper .dataTables_length select {
+  background-color: #2d3748 !important;
+  color: #f0f4f8 !important;
+  border: 1px solid #555 !important;
+}
+
+/* 🔧 Corrige paginação */
+body.dark .dataTables_wrapper .dataTables_paginate .paginate_button {
+  background-color: #2d3748 !important;
+  color: #f0f4f8 !important;
+  border: 1px solid #555 !important;
+}
+
+/* 🔧 Corrige hover nas células */
+body.dark table.dataTable tbody tr:hover {
+  background-color: #3c4a5a !important;
+  color: #ffffff !important;
+}
+
+/* 🔧 Corrige fundo e texto da tabela no modo escuro */
+body.dark table.dataTable {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  color: #f0f4f8 !important;
+}
+
+/* 🔧 Corrige cabeçalhos e células */
+body.dark table.dataTable th,
+body.dark table.dataTable td {
+  background-color: transparent !important;
+  color: #f0f4f8 !important;
+  border-color: #444 !important;
+}
+
+/* 🔧 Corrige linhas da tabela */
+body.dark table.dataTable tbody tr {
+  background-color: transparent !important;
+  color: #f0f4f8 !important;
+}
+
+/* 🔧 Corrige hover nas linhas */
+body.dark table.dataTable tbody tr:hover {
+  background-color: #3c4a5a !important;
+  color: #ffffff !important;
+}
